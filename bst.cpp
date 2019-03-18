@@ -12,6 +12,13 @@
 */
 #include "bst.h"
 
+struct Node {
+  int element;
+  Node* left;
+  Node* right;
+};
+
+
 /**
 *** Initializes the binary search tree. Deletes all existing nodes in the tree
 *** @return The number of deleted nodes
@@ -31,7 +38,20 @@ void delete_bst(Bst bst)
 */
 int get_depth(Bst bst)
 {
-  return 0;
+  if(bst == 0)
+    return 0;
+
+  if(bst->left == 0 && bst->right == 0)
+    return 1;
+
+  if(get_depth(bst->left) > get_depth(bst->right))
+  {
+    return get_depth(bst->left) + 1;
+  }
+  else
+  {
+    return get_depth(bst->right) + 1;
+  }
 }
 
 /**
