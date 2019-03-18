@@ -10,10 +10,12 @@
  * <your description here>
  *-----------------------------------------------------------------------------
 */
+#include <stdlib.h>
+#include "general.h"
 #include "bst.h"
 
 struct Node {
-  int element;
+  int value;
   Node* left;
   Node* right;
 };
@@ -30,7 +32,10 @@ Bst new_bst()
 
 void delete_bst(Bst bst)
 {
-
+  if(bst != 0)
+  {
+    sfree(bst);
+  }
 }
 
 /**
@@ -59,7 +64,23 @@ int get_depth(Bst bst)
 */
 void add(Bst* bst, int value)
 {
+  if(*bst == 0)
+  {
+    Bst newBst = (Bst) malloc(sizeof(Node));
+    newBst->right = 0;
+    newBst->left = 0;
+    newBst->value = value;
 
+    *bst = newBst;
+  }
+  else if(value > (*bst)->value)
+  {
+    add(&(*bst)->right, value);
+  }
+  else
+  {
+    add(&(*bst)->left, value);
+  }
 }
 
 /**
@@ -67,7 +88,7 @@ void add(Bst* bst, int value)
 */
 int root_value(Bst bst)
 {
-  return 0;
+  return bst->value;
 }
 
 /**
