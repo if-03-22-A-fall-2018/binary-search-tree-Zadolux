@@ -34,6 +34,12 @@ void delete_bst(Bst bst)
 {
   if(bst != 0)
   {
+    if(bst->right != 0)
+      delete_bst(bst->right);
+
+    if(bst->left != 0)
+      delete_bst(bst->left);
+
     sfree(bst);
   }
 }
