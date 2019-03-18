@@ -96,7 +96,7 @@ int root_value(Bst bst)
 */
 Bst left_subtree(Bst root)
 {
-  return 0;
+  return root->left;
 }
 
 /**
@@ -104,7 +104,7 @@ Bst left_subtree(Bst root)
 */
 Bst right_subtree(Bst root)
 {
-  return 0;
+  return root->right;
 }
 
 /**
