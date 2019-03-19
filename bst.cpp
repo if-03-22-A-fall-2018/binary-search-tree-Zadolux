@@ -123,7 +123,19 @@ Bst right_subtree(Bst root)
 */
 int traverse_pre_order(Bst bst, int *elements, int start)
 {
-  return 0;
+  if(bst != 0)
+  {
+    elements[start] = bst->value;
+
+    if(get_depth(bst) > 0)
+    {
+       start++;
+       start = traverse_pre_order(bst->left, elements, start);
+       start = traverse_pre_order(bst->right, elements, start);
+    }
+  }
+
+  return start;
 }
 
 /**
@@ -136,7 +148,22 @@ int traverse_pre_order(Bst bst, int *elements, int start)
 */
 int traverse_in_order(Bst bst, int *elements, int start)
 {
-  return 0;
+  if(bst != 0)
+  {
+    if(get_depth(bst) > 0)
+    {
+      if(bst->left != 0)
+        start = traverse_in_order(bst->left, elements, start);
+
+      elements[start] = bst->value;
+      start++;
+
+      if(bst->right != 0)
+        start = traverse_in_order(bst->right, elements, start);
+    }
+  }
+
+  return start;
 }
 
 /**
