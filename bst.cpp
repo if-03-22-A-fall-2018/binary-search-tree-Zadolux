@@ -209,5 +209,10 @@ void most_left_longest_branch(Bst bst, Bst* branch)
 */
 int get_number_of_subtrees(Bst bst)
 {
-  return 0;
+  if(bst != 0)
+  {
+    return (get_number_of_subtrees(bst->left) + 1) + (get_number_of_subtrees(bst->right) + 1);
+  }
+
+  return -1;
 }
