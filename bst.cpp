@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------------------------
- *				HTBLA-Leonding / Class: <your class name here>
+ *				HTBLA-Leonding / Class: 2AHIF
  *-----------------------------------------------------------------------------
  * Exercise Number: #exercise_number#
  * File:			bst.cpp
@@ -7,7 +7,7 @@
  * Due Date:		May 31, 2017
  *-----------------------------------------------------------------------------
  * Description:
- * <your description here>
+ * Binary search tree implementation
  *-----------------------------------------------------------------------------
 */
 #include <stdlib.h>
