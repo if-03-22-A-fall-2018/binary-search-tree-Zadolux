@@ -204,11 +204,11 @@ bool are_equal(Bst bst1, Bst bst2)
 {
   if(bst1 == bst2)
   {
-      return true;
+    return true;
   }
   else if(get_depth(bst1) == get_depth(bst2))
   {
-    return are_equal(bst1->right, bst2->right) && are_equal(bst1->left, bst2->left);
+    return (bst1->value == bst2->value) && are_equal(bst1->right, bst2->right) && are_equal(bst1->left, bst2->left);
   }
   else
   {
