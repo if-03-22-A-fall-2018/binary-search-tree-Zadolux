@@ -160,7 +160,25 @@ int traverse_post_order(Bst bst, int *elements, int start)
 */
 bool are_equal(Bst bst1, Bst bst2)
 {
-  return false;
+  if(bst1 == 0)
+  {
+    if(bst2 == 0)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  else if(bst1->value == bst2->value)
+  {
+    return are_equal(bst1->right, bst2->right) && are_equal(bst1->left, bst2->left);
+  }
+  else
+  {
+    return false;
+  }
 }
 
 /**
